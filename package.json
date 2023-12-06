@@ -1,21 +1,60 @@
 {
   "name": "prefix-ts",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Get the vendors prefixes of a css properties, according to can i use data.",
+  "keywords": [
+    "caniuse",
+    "prefix",
+    "css",
+    "property"
+  ],
+  "homepage": "https://github.com/proliance-ai/prefiks-ts",
+  "author": {
+    "name": "Leny",
+    "email": "info@flatland.be",
+    "url": "http://leny.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/proliance-ai/prefiks-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/proliance-ai/prefiks-ts/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/proliance-ai/prefiks-ts/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/prefiks-ts.cjs",
+  "module": "lib/prefiks-ts.js",
+  "exports": {
+    "require": "./lib/prefiks-ts.cjs",
+    "import": "./lib/prefix-ts.js"
+  },
   "type": "module",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "test": "vitest",
+    "lint": "npx eslint src"
   },
   "devDependencies": {
     "@types/node": "^20.10.3",
-    "semver": "^7.5.4",
+    "@types/semver": "^7.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.6.4"
+    "vite-plugin-dts": "^3.6.4",
+    "vitest": "^1.0.1"
   },
   "dependencies": {
-    "caniuse-db": "^1.0.30001566"
+    "caniuse-db": "^1.0.30001566",
+    "semver": "^7.5.4"
   }
 }

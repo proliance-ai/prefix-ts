@@ -12,3 +12,9 @@ export interface Agent {
 export interface AgentResult extends Agent {
   name: AgentType;
 }
+export interface Feature {
+  stats: Record<AgentType, Record<string, string[]>>;
+}
+export interface CaniuseData {
+  data: Record<string, Feature>;
+}
