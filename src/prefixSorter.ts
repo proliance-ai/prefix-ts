@@ -1,1 +1,1 @@
-export const prefixSorter = (a: string = '', b: string = ''): number => a.length - b.length;
+export const prefixSorter = (a: string = '', b: string = ''): number => b.length - a.length;

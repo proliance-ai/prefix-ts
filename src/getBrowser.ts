@@ -4,7 +4,7 @@ import { AgentResult, AgentType } from './typings.ts';
 
 export const getBrowser = (name: string = ''): undefined | AgentResult => {
   const [agent] = Object.entries(browsers)
-    .find(([_, value]) => value.includes(name.toLowerCase())) || [''];
+    .find(([_key, value]) => value.includes(name.toLowerCase())) || [''];
 
   if (agent) {
     return { ...agents[agent as AgentType], name: agent as AgentType };
