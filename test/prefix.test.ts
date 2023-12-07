@@ -38,6 +38,7 @@ describe('Errors', (): void => {
 });
 
 describe('Browsers aliases', (): void => {
+  // TODO use browsers data to generate tests
   // IE aliases
   test(
     'Should work with "IE" alias',
