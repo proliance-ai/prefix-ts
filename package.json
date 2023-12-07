@@ -1,7 +1,7 @@
 {
   "name": "prefix-ts",
-  "version": "0.0.1",
-  "description": "Get the vendors prefixes of a css properties, according to can i use data.",
+  "version": "1.0.0",
+  "description": "Get the vendors prefixes of a css properties, according to caniuse data.",
   "keywords": [
     "caniuse",
     "prefix",
@@ -10,10 +10,16 @@
   ],
   "homepage": "https://github.com/proliance-ai/prefiks-ts",
   "author": {
-    "name": "Leny",
-    "email": "info@flatland.be",
-    "url": "http://leny.me"
+    "name": "Borys Kutz",
+    "email": "kotboriska@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "leny",
+      "email": "info@flatland.be",
+      "url": "http://leny.me"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/proliance-ai/prefiks-ts.git"

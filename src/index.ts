@@ -2,7 +2,6 @@ import caniuseData from 'caniuse-db/data.json';
 import semver from 'semver';
 import { getBrowser } from './getBrowser.ts';
 import { versionToSemver } from './versionToSemver.ts';
-import { prefixSorter } from './prefixSorter.ts';
 import { CaniuseData } from './typings.ts';
 
 const prefixTs = (feature: string, browsers: string | Record<string, string | number>, givenVersion: string = '*' ) => {
@@ -10,13 +9,9 @@ const prefixTs = (feature: string, browsers: string | Record<string, string | nu
   if (!featureData) {
     throw new Error(`Unknown feature "${feature}"!`);
   }
-  let browsersHash: Record<string, string | number>;
-  if (typeof browsers === 'string') {
-    browsersHash = {};
-    browsersHash[browsers] = givenVersion;
-  } else {
-    browsersHash = browsers;
-  }
+  const browsersHash: Record<string, string | number> = typeof browsers === 'string'
+    ? {[browsers]: givenVersion}
+    : browsers;
   const prefixes = [];
 
   for (const browser in browsersHash) {
@@ -53,8 +48,9 @@ const prefixTs = (feature: string, browsers: string | Record<string, string | nu
         }
       }
     }
-  }
-  return [...new Set(prefixes)].sort(prefixSorter);
+  } // TODO refactor ladder to hell
+  return [...new Set(prefixes)]
+    .sort((a: string = '', b: string = ''): number => b.length - a.length);
 };
 
 export default prefixTs;
