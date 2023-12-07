@@ -1,4 +1,4 @@
-[# prefiks-ts 
+# prefiks-ts 
 
 > Fork of [prefiks](https://github.com/leny/prefiks) package by [Leny](https://github.com/leny) for TypeScript
 
