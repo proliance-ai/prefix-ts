@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-Install the module with: `npm install prefiks-ts`
+Install the module with: `npm install prefiks-ts` or `yarn add prefiks-ts`
 
 Include it in your scripts with: `prefiksTs = require( "prefiks-ts" );` or `import * as prefiksTs from "prefiks-ts";`
 
@@ -77,7 +77,7 @@ The supported values for `browser` argument are listed bellow. These are **case 
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
 
 ### TODO
 
@@ -99,6 +99,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * **0.1.0**: Initial release (*11/07/14*)
 
 ## License
-Copyright (c) 2014 Leny  
+Copyright (c) 2023 Borys Kutz  
 Licensed under the MIT license.
-]()
