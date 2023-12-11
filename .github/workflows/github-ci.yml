@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: '18'
-  BUILD_PATH: '/lib/'
+  BUILD_PATH: 'lib/'
   TEST_SCRIPT: 'test'
   BUILD_SCRIPT: 'build'
 
