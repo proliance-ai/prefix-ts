@@ -45,7 +45,7 @@ jobs:
         run: yarn list
 
       - name: Install Dependencies
-        run: yarn install --non-interactive --frozen-lockfile
+        run: yarn install --non-interactive --frozen-lockfile --prefer-offline
 
       - name: Run tests
         run: yarn ${{ env.TEST_SCRIPT }}
