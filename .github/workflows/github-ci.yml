@@ -56,6 +56,6 @@ jobs:
 
       - name: Publish Package
         run: |
-          yarn publish --non-interactive --new-version ${{ github.ref_name }}
+          yarn publish --non-interactive --no-git-tag-version --new-version ${{ github.ref_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
