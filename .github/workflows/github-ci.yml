@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: '18'
-  BUILD_PATH: './lib/'
+  BUILD_PATH: '/lib/'
   TEST_SCRIPT: 'test'
   BUILD_SCRIPT: 'build'
 
@@ -29,12 +29,18 @@ jobs:
           scope: '@proliance-ai/prefix-ts'
 
       - name: Cache node.js modules
+        id: cache-yarn
         uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
+      - if: ${{ steps.cache-yarn.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: yarn list
 
       - name: Install Dependencies
         run: yarn install --non-interactive --frozen-lockfile
@@ -43,7 +49,11 @@ jobs:
         run: yarn ${{ env.TEST_SCRIPT }}
 
       - name: Build Package
-        run: yarn ${{ env.BUILD_SCRIPT }}
+        run: |
+          yarn ${{ env.BUILD_SCRIPT }}
+          pwd
+          ls -la
+          ls -la ${{ env.BUILD_PATH }}
 
       - name: Configure npm for GitHub Packages
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
