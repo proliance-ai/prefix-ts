@@ -7,7 +7,8 @@ on:
 
 env:
   NODE_VERSION: '18'
-  BUILD_PATH: '/lib/'
+  BUILD_PATH: './lib/'
+  TEST_SCRIPT: 'test'
   BUILD_SCRIPT: 'build'
 
 jobs:
@@ -37,6 +38,9 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install --non-interactive --frozen-lockfile
+
+      - name: Run tests
+        run: yarn ${{ env.TEST_SCRIPT }}
 
       - name: Build Package
         run: yarn ${{ env.BUILD_SCRIPT }}
