@@ -1,0 +1,53 @@
+name: Build and publish npm package
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+env:
+  NODE_VERSION: '18'
+  BUILD_PATH: '/lib/'
+  BUILD_SCRIPT: 'build'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://npm.pkg.github.com/
+          scope: '@proliance-ai/prefix-ts'
+
+      - name: Cache node.js modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        run: yarn install --non-interactive --frozen-lockfile
+
+      - name: Build Package
+        run: yarn ${{ env.BUILD_SCRIPT }}
+
+      - name: Configure npm for GitHub Packages
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+
+      - name: Publish Package
+        run: |
+          cd ${{ env.BUILD_PATH }}
+          npm version ${{ github.ref_name }} --allow-same-version
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
