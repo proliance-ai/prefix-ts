@@ -49,18 +49,13 @@ jobs:
         run: yarn ${{ env.TEST_SCRIPT }}
 
       - name: Build Package
-        run: |
-          yarn ${{ env.BUILD_SCRIPT }}
-          pwd
-          ls -la
-          ls -la ${{ env.BUILD_PATH }}
+        run: yarn ${{ env.BUILD_SCRIPT }}
 
       - name: Configure npm for GitHub Packages
         run: mv .npmrc-publish .npmrc
 
       - name: Publish Package
         run: |
-          npm version ${{ github.ref_name }} --allow-same-version --no-git-tag-version
-          npm publish
+          yarn publish --non-interactive --new-version ${{ github.ref_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
