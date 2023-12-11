@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@proliance-ai'
           cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
+          cache-dependency-path: '**/yarn.lock'
 
       - name: Cache node.js modules
         id: cache-yarn
