@@ -61,7 +61,7 @@ jobs:
       - name: Publish Package
         run: |
           cd ${{ env.BUILD_PATH }}
-          npm version ${{ github.ref_name }} --allow-same-version
+          npm version ${{ github.ref_name }} --allow-same-version --no-git-tag-version
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
