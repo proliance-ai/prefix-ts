@@ -29,7 +29,6 @@ jobs:
           scope: '@proliance-ai'
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
-        run: cat .npmrc
 
       - name: Cache node.js modules
         id: cache-yarn
@@ -55,7 +54,10 @@ jobs:
         run: yarn ${{ env.BUILD_SCRIPT }}
 
       - name: Configure npm for GitHub Packages
-        run: mv .npmrc-publish .npmrc
+        run: |
+          echo -e "Current .npmrc is:\n $(cat .npmrc)"
+          mv .npmrc-publish .npmrc
+          echo -e "Substituted .npmrc is:\n $(cat .npmrc)"
 
       - name: Publish Package
         run: |
