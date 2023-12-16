@@ -85,6 +85,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 - [ ] Add more test cases
 - [ ] AMD implementation
 
+## Install packages locally
+
+To install `@proliance-ai/prefix-ts` package locally, rename the file `.npmrc-local` to `.npmrc.`. Paste there your GitHub personal access token ([info](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages)).
+
 ## Release History
 ### prefix-ts
 * **1.0.0**: Typescript support (*07/12/2023*)
