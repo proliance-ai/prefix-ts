@@ -21,7 +21,7 @@ The prefixes are reverse-ordered by length (longest prefix first).
 
 The **prefix-ts** module exposes a function that can be called by two different options types. 
 ```ts
-  type PrefiksTs = (options: SingleBrowserOptions | MultipleBrowserOptions) => string[];
+  type PrefixTs = (options: SingleBrowserOptions | MultipleBrowserOptions) => string[];
 ```
 
 ### Single browser options
