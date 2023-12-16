@@ -12,7 +12,7 @@
 
 Install the module with: `npm install prefix-ts` or `yarn add prefix-ts`
 
-Include it in your scripts with: `prefiksTs = require( "prefix-ts" );` or `import * as prefiksTs from "prefix-ts";`
+Include it in your scripts with: `prefixTs = require( "prefix-ts" );` or `import * as prefixTs from "prefix-ts";`
 
 ## Documentation
 
@@ -84,10 +84,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 - [ ] Add more browsers aliases
 - [ ] Add more test cases
 - [ ] AMD implementation
-
-## Install packages locally
-
-To install `@proliance-ai/prefix-ts` package locally, rename the file `.npmrc-local` to `.npmrc.`. Paste there your GitHub personal access token ([info](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages)).
 
 ## Release History
 ### prefix-ts
