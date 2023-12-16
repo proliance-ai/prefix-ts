@@ -1,8 +1,8 @@
-# prefiks-ts 
+# prefix-ts 
 
 > Fork of [prefiks](https://github.com/leny/prefiks) package by [Leny](https://github.com/leny) for TypeScript
 
-[//]: # (![NPM version]&#40;http://img.shields.io/npm/v/prefiks-ts.svg&#41; ![Build Status]&#40;http://img.shields.io/travis/leny/prefiks.svg&#41; ![Dependency Status]&#40;https://david-dm.org/leny/prefiks.svg&#41; ![Downloads counter]&#40;http://img.shields.io/npm/dm/prefiks.svg&#41;)
+[//]: # (![NPM version]&#40;http://img.shields.io/npm/v/prefix-ts.svg&#41; ![Build Status]&#40;http://img.shields.io/travis/leny/prefiks.svg&#41; ![Dependency Status]&#40;https://david-dm.org/leny/prefiks.svg&#41; ![Downloads counter]&#40;http://img.shields.io/npm/dm/prefiks.svg&#41;)
 
 > Get the vendors prefixes of a css properties, according to [caniuse](http://caniuse.com) data.
 
@@ -10,16 +10,16 @@
 
 ## Getting Started
 
-Install the module with: `npm install prefiks-ts` or `yarn add prefiks-ts`
+Install the module with: `npm install prefix-ts` or `yarn add prefix-ts`
 
-Include it in your scripts with: `prefiksTs = require( "prefiks-ts" );` or `import * as prefiksTs from "prefiks-ts";`
+Include it in your scripts with: `prefiksTs = require( "prefix-ts" );` or `import * as prefiksTs from "prefix-ts";`
 
 ## Documentation
 
 The `prefixTs` function returns an array with the prefixes to use for the given browser(s) versions (it always returns an array, even empty).  
 The prefixes are reverse-ordered by length (longest prefix first).
 
-The **prefiks-ts** module exposes a function that can be called by two different options types. 
+The **prefix-ts** module exposes a function that can be called by two different options types. 
 ```ts
   type PrefiksTs = (options: SingleBrowserOptions | MultipleBrowserOptions) => string[];
 ```
