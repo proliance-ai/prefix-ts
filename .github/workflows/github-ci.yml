@@ -55,9 +55,9 @@ jobs:
 
       - name: Configure npm for GitHub Packages
         run: |
-          echo -e "Current .npmrc is:\n $(cat .npmrc)"
+          echo -e "Current .npmrc is:\n$(cat .npmrc)"
           mv .npmrc-publish .npmrc
-          echo -e "Substituted .npmrc is:\n $(cat .npmrc)"
+          echo -e "Substituted .npmrc is:\n$(cat .npmrc)"
 
       - name: Publish Package
         run: |
