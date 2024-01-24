@@ -99,5 +99,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * **0.1.0**: Initial release (*11/07/14*)
 
 ## License
-Copyright (c) 2023 Borys Kutz  
+Copyright (c) 2023 Proliance GmbH  
 Licensed under the MIT license.
