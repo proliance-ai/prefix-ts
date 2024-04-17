@@ -1,0 +1,23 @@
+name: Test self-hosted runner
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - artem_test_runner
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: [ "self-hosted", "Linux", "X64", "proliance-ai", "awsec2" ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: |
+          echo "Hello, world!"
+          docker --version
