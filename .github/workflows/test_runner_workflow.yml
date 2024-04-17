@@ -21,3 +21,4 @@ jobs:
         run: |
           echo "Hello, world!"
           docker --version
+          echo $SHELL
