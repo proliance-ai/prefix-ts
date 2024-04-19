@@ -25,4 +25,5 @@ jobs:
           echo "Hello, world!"
           docker --version
           echo $SHELL
-          cat /etc/os-release 
+          cat /etc/os-release
+          lscpu
