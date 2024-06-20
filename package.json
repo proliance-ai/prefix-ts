@@ -49,12 +49,14 @@
     "lint": "npx eslint src"
   },
   "devDependencies": {
+    "@eslint/js": "^9.5.0",
     "@types/node": "^20.14.6",
     "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "9.x",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.13.1",
     "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0"
