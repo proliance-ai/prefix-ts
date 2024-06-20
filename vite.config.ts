@@ -16,7 +16,12 @@ export default defineConfig({
       formats: ['es', 'cjs', 'umd'],
     },
   },
-  plugins: [dts()],
+  plugins: [dts({
+    beforeWriteFile: (filePath, content) => ({
+      filePath: filePath.replace('index.d.ts', 'prefix-ts.d.ts'),
+      content,
+    }),
+  })],
   test: {
 
   }
