@@ -41,7 +41,7 @@
   },
   "type": "module",
   "files": [
-    "lib"
+    "lib/*"
   ],
   "scripts": {
     "build": "tsc && vite build",
